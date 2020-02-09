@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Local
-    'users.apps.UsersConfig',
+    'users.apps.UsersConfig', #new
+    'pages.apps.PagesConfig', #new
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'bookstore_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], #new
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
