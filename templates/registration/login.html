@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Log In{% endblock title %}
 
@@ -6,75 +7,7 @@
 <h2>Log In</h2>
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
+  {{ form|crispy }}
+  <button class="btn btn-success" type="submit">Log In</button>
 </form>
 {% endblock content %}
-
-
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>Project Preview - Bulma Builder</title>
-
-  <link rel="stylesheet" id="bs-base-fonts">
-  <link rel="stylesheet" href="/vendor/bulma/bulma.min.css" id="bs-base-css">
-  <style type="text/css" id="bs-recompiled-css"></style>
-  <link rel="stylesheet" href="/vendor/icons/css/fontello.css">
-  <link rel="stylesheet" href="/static/build/css/bulma-preview.2376e00c.css">
-  <link rel="icon" href="/favicon-bulma.ico">
-</head>
-
-<body id="page">
-  <div class="container is-fluid" id="content">
-
-    <section data-section-id="1" data-component-id="15a7_12_01_awz" data-category="sign-in" class="section">
-      <div class="container has-text-centered">
-        <div class="columns is-centered">
-          <div class="column is-5 is-4-desktop">
-            <form>
-              <div class="field">
-                <div class="control">
-                  <input class="input" type="email" placeholder="Email">
-                </div>
-              </div>
-              <div class="field">
-                <div class="control">
-                  <input class="input" type="password" placeholder="Password">
-                </div>
-              </div>
-              <div class="field">
-                <button class="button is-primary is-fullwidth" data-config-id="primary-action">Sign in!</button>
-              </div><a href="#" data-config-id="secondary-action">or sign in with Facebook</a>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-
-  <script>
-    var links = document.getElementsByTagName('a');
-    for (var i = 0; i < links.length; i += 1) {
-      links[i].addEventListener('click', function (e) {
-        e.preventDefault();
-      });
-    }
-
-    var forms = document.getElementsByTagName('form');
-    for (var i = 0; i < forms.length; i += 1) {
-      forms[i].addEventListener('submit', function (e) {
-        e.preventDefault();
-      }, true);
-    }
-  </script>
-
-
-
-</body>
-
-</html>
